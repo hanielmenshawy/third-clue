@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clue 3</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 40px;
+      background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+    }
+    .container {
+      background-color: rgba(20, 20, 20, 0.85);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+    }
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 60%;
+      margin-top: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #5c0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #nextQR {
+      margin-top: 25px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Clue 3</h2>
+    <p>In this mansion, restless whispers come from the _____.<br>
+    They say it’s _____ — no soul rests easy there.<br>
+    Each note you hear is a letter — piece them together carefully.<br>
+    What eerie phrase does the melody reveal?</p>
+
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/msFagcQ_9sM" 
+    title="Clue 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <br><br>
+    <input type="text" id="answer" placeholder="Enter your answer...">
+    <button onclick="checkAnswer()">Submit</button>
+
+    <div id="nextQR">
+      <p>Well done. Scan this to continue:</p>
+      <img src="your-next-qr-code.png" alt="Next QR Code" width="200">
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+      if (userAnswer === "bed bad") {
+        document.getElementById("nextQR").style.display = "block";
+      } else {
+        alert("That's not it... listen closely again.");
+      }
+    }
+  </script>
+</body>
+</html>
